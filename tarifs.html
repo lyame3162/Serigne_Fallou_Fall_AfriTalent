@@ -1,13 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tarifs</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>AfriTalent — Accueil</title>
+    <title>AfriTalent —Tarifs</title>
+    <!-- Bootstrap 5 via CDN : feuille de style -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Votre feuille de style personnelle -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+    <!-- Le contenu de la page sera ajoute ici -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">AfriTalent</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="freelances.html">Freelances</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tarifs.html">Tarifs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">A propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main>
+        <!-- Section Hero -->
+        <section id="hero">
+            <div class="container py-5">
+                <h1>Nos formules adaptées à vos besoins</h1>
+                <p>Choisissez le plan qui vous correspond et commencez dès aujourd'hui.</p>
+            </div>
+        </section>
+
+        <!-- Section Tarifs -->
+        <section id="tarifs">
+            <div class="container py-4">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center h-100">
+                            <div class="card-body">
+                                <h3>Gratuit</h3>
+                                <p class="display-4">0f</p>
+                                <p class="text-muted">/mois</p>
+                                <hr>
+                                <p>✓ Consultation des freelances</p>
+                                <p>✓ 1 projet actif</p>
+                                <p>✓ Support par email</p>
+                                <p class="text-muted">✗ Messagerie illimitée</p>
+                                <p class="text-muted">✗ Statistiques avancées</p>
+                                <button class="btn btn-outline-primary mt-3">S'inscrire</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center h-100 border-primary">
+                            <div class="card-header bg-primary text-white">⭐ Populaire</div>
+                            <div class="card-body">
+                                <h3>Pro</h3>
+                                <p class="display-4">30000f</p>
+                                <p class="text-muted">/mois</p>
+                                <hr>
+                                <p>✓ Tous les freelances</p>
+                                <p>✓ Projets illimités</p>
+                                <p>✓ Messagerie prioritaire</p>
+                                <p>✓ Support 24/7</p>
+                                <p>✓ Statistiques détaillées</p>
+                                <button class="btn btn-primary mt-3">Choisir Pro</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center h-100">
+                            <div class="card-body">
+                                <h3>Entreprise</h3>
+                                <p class="display-4">Sur devis</p>
+                                <hr>
+                                <p>✓ Solution sur mesure</p>
+                                <p>✓ API dédiée</p>
+                                <p>✓ Gestion d'équipe</p>
+                                <p>✓ Formation incluse</p>
+                                <p>✓ SLA personnalisé</p>
+                                <button class="btn btn-outline-primary mt-3">Nous contacter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section FAQ -->
+        <section id="faq">
+            <div class="container py-4">
+                <h2>Questions fréquentes</h2>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq1">
+                                Comment fonctionne la plateforme ?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                AfriTalent vous met en relation avec des freelances qualifiés. Vous publiez votre
+                                projet, recevez des propositions et choisissez le freelance qui vous convient.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq2">
+                                Comment sont sélectionnés les freelances ?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Chaque freelance passe par un processus de vérification : portfolio, entretien et tests
+                                techniques.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq3">
+                                Quels sont les modes de paiement ?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Nous acceptons les cartes bancaires, Portefeuille électronique et virement bancaire.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container py-4">
+            <p>&copy; 2025 AfriTalent. Tous droits reserves.</p>
+        </div>
+    </footer>
+    <!-- Bootstrap 5 via CDN : script JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Votre script JavaScript -->
+    <script src="js/main.js"></script>
 </body>
-</html>

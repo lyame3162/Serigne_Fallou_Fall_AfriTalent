@@ -1,13 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>about</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>AfriTalent — Accueil</title>
+    <!-- Bootstrap 5 via CDN : feuille de style -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Votre feuille de style personnelle -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+    <!-- Le contenu de la page sera ajoute ici -->
+    <!-- Le contenu de la page sera ajoute ici -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">AfriTalent</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="freelances.html">Freelances</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">A propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main>
+        <!-- Section Hero -->
+        <section id="hero">
+            <div class="container py-5">
+                <h1>À propos d'AfriTalent</h1>
+                <p>Découvrez notre histoire, nos valeurs et notre mission.</p>
+            </div>
+        </section>
+
+        <!-- Section Notre Histoire -->
+        <section id="histoire">
+            <div class="container py-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Notre Histoire</h2>
+                        <p>Fondée en 2025 à Dakar, AfriTalent est née d'un constat simple : l'Afrique regorge de talents
+                            tech exceptionnels, mais ils manquent souvent de visibilité.</p>
+                        <p>Notre mission est de créer un pont entre ces freelances et les clients du monde entier.</p>
+                        <p>En seulement 1 an, nous avons accompagné plus de 1200 freelances et réalisé plus de 3800
+                            projets.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600"
+                            alt="Equipe AfriTalent" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Nos valeurs -->
+        <section id="valeurs">
+            <div class="container py-4">
+                <h2>Nos valeurs</h2>
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <h3>Innovation</h3>
+                        <p>Nous innovons constamment pour offrir la meilleure expérience.</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <h3>Accessibilité</h3>
+                        <p>Rendre le talent accessible à tous, partout dans le monde.</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <h3>Communauté</h3>
+                        <p>Construire une communauté solidaire de freelances.</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <h3>Excellence</h3>
+                        <p>Exiger l'excellence dans chaque projet réalisé.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section L'équipe -->
+        <section id="equipe">
+            <div class="container py-4">
+                <h2>Notre équipe</h2>
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3>Serigne Fallou Fall</h3>
+                                <p>CEO & Fondateur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3>Marie Fall</h3>
+                                <p>Directrice Technique</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3>Ousmane Fall</h3>
+                                <p>Responsable Commercial</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3>Fatou Fall</h3>
+                                <p>Community Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container py-4">
+            <p>&copy; 2025 AfriTalent. Tous droits reserves.</p>
+        </div>
+    </footer>
+    <!-- Bootstrap 5 via CDN : script JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Votre script JavaScript -->
+    <script src="js/main.js"></script>
 </body>
-</html>
