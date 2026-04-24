@@ -1,51 +1,51 @@
-
-
 :root {
   /* Couleurs principales */
-  --color-primary:    #4546a9;   /* Orange AfriTalent */
-  --color-primary-h:  #5a69bd;   /* Orange hover */
-  --color-dark:       #68759e;   /* Bleu marine profond */
-  --color-bg:         #F2EEE9;   /* Fond crème doux */
-  --color-bg-card:    #FFFFFF;   /* Fond carte */
-  --color-text:       #1E2D5A;   /* Texte principal */
-  --color-text-muted: #6B7594;   /* Texte secondaire */
-  --color-border:     rgba(30,45,90,0.1);
+  --color-primary: #4546a9; /* Orange AfriTalent */
+  --color-primary-h: #5a69bd; /* Orange hover */
+  --color-dark: #68759e; /* Bleu marine profond */
+  --color-bg: #f2eee9; /* Fond crème doux */
+  --color-bg-card: #ffffff; /* Fond carte */
+  --color-text: #1e2d5a; /* Texte principal */
+  --color-text-muted: #6b7594; /* Texte secondaire */
+  --color-border: rgba(30, 45, 90, 0.1);
 
   /* Typographie */
-  --font-display: 'Baloo 2', cursive;
-  --font-body:    'Inter', sans-serif;
+  --font-display: "Baloo 2", cursive;
+  --font-body: "Inter", sans-serif;
 
   /* Espacements */
-  --section-py:   80px;
-  --card-radius:  16px;
-  --card-shadow:  0 2px 16px rgba(30,45,90,0.08);
+  --section-py: 80px;
+  --card-radius: 16px;
+  --card-shadow: 0 2px 16px rgba(30, 45, 90, 0.08);
 
   /* Transitions */
   --transition: 0.25s ease;
 
   /* Navbar */
-  --navbar-bg:    #FFFFFF;
-  --navbar-color: #1E2D5A;
+  --navbar-bg: #ffffff;
+  --navbar-color: #1e2d5a;
 }
 
 /* ============================================================
    2. DARK MODE — variables overrides
    ============================================================ */
 [data-theme="dark"] {
-  --color-bg:         #0C1530;
-  --color-bg-card:    #162048;
-  --color-text:       #E8EDF8;
-  --color-text-muted: #8899BB;
-  --color-border:     rgba(255,255,255,0.08);
-  --card-shadow:      0 2px 16px rgba(0,0,0,0.35);
-  --navbar-bg:        #0A1228;
-  --navbar-color:     #E8EDF8;
+  --color-bg: #0c1530;
+  --color-bg-card: #162048;
+  --color-text: #e8edf8;
+  --color-text-muted: #8899bb;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+  --navbar-bg: #0a1228;
+  --navbar-color: #e8edf8;
 }
 
 /* ============================================================
    3. RESET & BASE
    ============================================================ */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -60,7 +60,9 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
-  transition: background-color var(--transition), color var(--transition);
+  transition:
+    background-color var(--transition),
+    color var(--transition);
   overflow-x: hidden;
 }
 
@@ -75,7 +77,9 @@ a {
   transition: color var(--transition);
 }
 
-ul { list-style: none; }
+ul {
+  list-style: none;
+}
 
 /* ============================================================
    4. NAVBAR
@@ -83,7 +87,10 @@ ul { list-style: none; }
 .navbar {
   background-color: var(--navbar-bg) !important;
   border-bottom: 1px solid var(--color-border);
-  transition: background-color var(--transition), box-shadow var(--transition), padding var(--transition);
+  transition:
+    background-color var(--transition),
+    box-shadow var(--transition),
+    padding var(--transition);
   padding-top: 14px;
   padding-bottom: 14px;
 }
@@ -92,11 +99,11 @@ ul { list-style: none; }
 .navbar.scrolled {
   padding-top: 8px;
   padding-bottom: 8px;
-  box-shadow: 0 4px 24px rgba(30,45,90,0.12);
+  box-shadow: 0 4px 24px rgba(30, 45, 90, 0.12);
 }
 
 [data-theme="dark"] .navbar.scrolled {
-  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .navbar-brand {
@@ -133,13 +140,15 @@ ul { list-style: none; }
   font-size: 0.95rem;
   padding: 6px 14px !important;
   border-radius: 6px;
-  transition: color var(--transition), background var(--transition);
+  transition:
+    color var(--transition),
+    background var(--transition);
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
   color: var(--color-primary) !important;
-  background: rgba(232,93,47,0.08);
+  background: rgba(232, 93, 47, 0.08);
 }
 
 .navbar-toggler {
@@ -163,7 +172,9 @@ ul { list-style: none; }
   border-radius: 25px !important;
   font-weight: 600;
   font-size: 0.9rem;
-  transition: background var(--transition), transform var(--transition) !important;
+  transition:
+    background var(--transition),
+    transform var(--transition) !important;
 }
 
 .btn-nav-cta:hover {
@@ -185,7 +196,10 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
   flex-shrink: 0;
 }
 
@@ -198,4 +212,112 @@ ul { list-style: none; }
   background: var(--color-primary);
   border-color: var(--color-primary);
   color: #fff;
+}
+
+/* ======================== */
+/* 6. HERO SECTION          */
+/* ======================== */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+.avatar-group {
+  display: flex;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  border: 2px solid white;
+  margin-left: -8px;
+}
+
+/* ======================== */
+/* 7. BENTO GRID            */
+/* ======================== */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.bento-card {
+  background: var(--color-bg-alt);
+  border-radius: var(--card-radius);
+  padding: 32px;
+  border: 1px solid var(--color-border);
+  transition: 0.3s;
+}
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.bento-card-lg {
+  grid-column: span 2;
+}
+.bento-card-tall {
+  grid-row: span 2;
+}
+.bento-card-wide {
+  grid-column: span 2;
+}
+.bento-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--bento-color);
+  opacity: 0.15;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+}
+.bento-icon {
+  font-size: 2rem;
+  color: var(--bento-color);
+  margin-bottom: 16px;
+}
+
+/* ======================== */
+/* 8. CATÉGORIES            */
+/* ======================== */
+.category-card {
+  background: var(--color-bg-alt);
+  border-radius: var(--card-radius);
+  padding: 28px;
+  border: 1px solid var(--color-border);
+  transition: 0.3s;
+}
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent);
+}
+.cat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/* ======================== */
+/* 9. TÉMOIGNAGES           */
+/* ======================== */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 50px;
+  height: 50px;
+  background-size: 50%;
+  background-color: var(--color-accent);
+  border-radius: 50%;
 }
