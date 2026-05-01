@@ -321,3 +321,43 @@ ul {
   background-color: var(--color-accent);
   border-radius: 50%;
 }
+/* ============================================================
+   20. RESPONSIVE — media queries
+   ============================================================ */
+
+/* Tablette ≤ 991px */
+@media (max-width: 991px) {
+  .bento-card-01 { grid-column: 1 / 13; }
+  .bento-card-02 { grid-column: 1 / 13; }
+  .bento-card-03 { grid-column: 1 / 13; }
+  .bento-card-04 { grid-column: 1 / 13; }
+
+  .pricing-card.featured { transform: none; }
+  .pricing-card.featured:hover { transform: translateY(-5px); }
+
+  #hero { min-height: auto; padding: 60px 0; }
+  .hero-logo-card { margin-top: 40px; }
+}
+
+/* Mobile ≤ 767px */
+@media (max-width: 767px) {
+  :root { --section-py: 56px; }
+
+  .hero-title { font-size: 2.4rem; }
+  .hero-logo-card { padding: 32px 24px; }
+  .hero-logo-card .logo-emoji { font-size: 46px; }
+  .hero-brand-name { font-size: 1.6rem; }
+
+  .stat-number { font-size: 2.6rem; }
+
+  .carousel-control-prev { left: -8px; }
+  .carousel-control-next { right: -8px; }
+
+  .contact-card { padding: 24px 18px; }
+}
+
+/* Mobile ≤ 375px */
+@media (max-width: 400px) {
+  .filter-btn { padding: 7px 12px; font-size: 0.8rem; }
+  .btn-primary-at, .btn-outline-at { padding: 11px 20px; font-size: 0.9rem; }
+}
