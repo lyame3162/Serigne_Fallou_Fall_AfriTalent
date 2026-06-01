@@ -76,3 +76,72 @@ document.addEventListener('DOMContentLoaded', function () {
     initNavbarScroll();
     initBackToTop();
 });
+
+/* ============================================================
+   4. COMPTEURS ANIMÉS AU SCROLL
+   Utilise IntersectionObserver — de 0 à la valeur cible
+   ============================================================ */
+function animateCounter(el) {
+  const target = parseInt(el.getAttribute('data-target'), 10);
+  const duration = 1800; // ms
+  const startTime = performance.now();
+
+  function tick(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease-out cubique pour un effet naturel
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const value = Math.floor(eased * target);
+    el.textContent = value.toLocaleString('fr-FR');
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      el.textContent = target.toLocaleString('fr-FR');
+    }
+  }
+
+  requestAnimationFrame(tick);
+}
+
+// Observer pour déclencher les compteurs quand ils entrent dans le viewport
+const counters = document.querySelectorAll('[data-target]');
+
+if (counters.length > 0) {
+  const counterObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        entry.target.dataset.animated = 'true'; // évite la double animation
+        animateCounter(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(function (counter) {
+    counterObserver.observe(counter);
+  });
+}
+
+/* ============================================================
+   5. ANIMATIONS FADE-IN AU SCROLL
+   Les sections apparaissent en fondu — IntersectionObserver
+   ============================================================ */
+const fadeEls = document.querySelectorAll('.fade-in-section');
+
+if (fadeEls.length > 0) {
+  const fadeObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry, i) {
+      if (entry.isIntersecting) {
+        // Délai en cascade pour les éléments d'une même grille
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(function () {
+          entry.target.classList.add('visible');
+        }, parseInt(delay));
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  fadeEls.forEach(function (el) {
+    fadeObserver.observe(el);
+  });
+}
