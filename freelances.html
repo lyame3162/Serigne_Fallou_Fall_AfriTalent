@@ -1,134 +1,369 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AfriTalent — freelances</title>
-    <!-- Bootstrap 5 via CDN : feuille de style -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Votre feuille de style personnelle -->
-    <link rel="stylesheet" href="css/style.css">
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>AfriTalent — Freelances</title> 
+<!-- Bootstrap 5 via CDN : feuille de style --> 
+<link 
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+rel="stylesheet"> 
+<!-- Votre feuille de style personnelle --> 
+<link rel="stylesheet" href="css/style.css">
 </head>
+<body> 
+<!-- Le contenu de la page sera ajoute ici --> 
 
-<body> <!-- Le contenu de la page sera ajoute ici -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container"> <a class="navbar-brand" href="index.html">AfriTalent</a> <button class="navbar-toggler"
-                type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu"
-                aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="freelances.html">Freelances</a></li>
-                    <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">A propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+
+ <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar" aria-label="Navigation principale">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" aria-label="AfriTalent — Accueil">
+        <span class="brand-icon" aria-hidden="true"><i class="bi bi-globe-africa"></i></span>
+        AfriTalent
+      </a>
+      <button class="navbar-toggler border-0" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="freelances.html">Freelances</a></li>
+          <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <button class="theme-btn" id="themeBtn" aria-label="Basculer le thème"></button>
+          <a href="#" class="btn-nav-cta nav-link">Rejoindre AfriTalent</a>
         </div>
-    </nav> <!-- Contenu principal -->
-    <main> <!-- Section Hero -->
-        <section id="hero">
-            <div class="container py-5">
-                <h1>Nos freelances talentueux</h1>
-                <p>Découvrez les meilleurs indépendants africains prêts à collaborer sur vos projets.</p>
-            </div>
-        </section> <!-- Section Filtres -->
-        <section id="filtres">
-            <div class="container py-4">
-                <div class="row justify-content-center">
-                    <div class="col-md-10">
-                        <div class="d-flex flex-wrap justify-content-center gap-2"> <button
-                                class="btn btn-primary filter-btn" data-category="all">Tous</button> <button
-                                class="btn btn-outline-primary filter-btn" data-category="web">Développement
-                                Web</button> <button class="btn btn-outline-primary filter-btn"
-                                data-category="design">Design</button> <button
-                                class="btn btn-outline-primary filter-btn" data-category="marketing">Marketing</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> <!-- Section Grille des freelances -->
-        <section id="freelances">
-            <div class="container py-4">
-                <div class="row" id="freelancesGrid"> <!-- Carte 1 -->
-                    <div class="col-md-6 col-lg-4 freelance-card" data-category="web">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h3>Cheikh Fall</h3>
-                                <p class="text-primary">Développeur Full-Stack</p>
-                                <p>Expert React, Node.js et Laravel. 5 ans d'expérience.</p>
-                                <p class="fw-bold">Tarif : 35000f/h</p> <button class="btn btn-primary">Voir le
-                                    profil</button>
-                            </div>
-                        </div>
-                    </div> <!-- Carte 2 -->
-                    <div class="col-md-6 col-lg-4 freelance-card" data-category="design">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h3>Aminata fall</h3>
-                                <p class="text-primary">UI/UX Designer</p>
-                                <p>Spécialiste Figma, design d'interfaces et prototypage.</p>
-                                <p class="fw-bold">Tarif : 40000f/h</p> <button class="btn btn-primary">Voir le
-                                    profil</button>
-                            </div>
-                        </div>
-                    </div> <!-- Carte 3 -->
-                    <div class="col-md-6 col-lg-4 freelance-card" data-category="marketing">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h3>Mamadou Fall</h3>
-                                <p class="text-primary">Expert SEO</p>
-                                <p>Spécialiste en référencement et campagnes Google Ads.</p>
-                                <p class="fw-bold">Tarif : 25000f/h</p> <button class="btn btn-primary">Voir le
-                                    profil</button>
-                            </div>
-                        </div>
-                    </div> <!-- Carte 4 -->
-                    <div class="col-md-6 col-lg-4 freelance-card" data-category="web">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h3>Ibrahim Fall</h3>
-                                <p class="text-primary">Développeur Frontend</p>
-                                <p>Angular, Vue.js, animations CSS avancées.</p>
-                                <p class="fw-bold">Tarif : 30000f/h</p> <button class="btn btn-primary">Voir le
-                                    profil</button>
-                            </div>
-                        </div>
-                    </div> <!-- Carte 5 -->
-                    <div class="col-md-6 col-lg-4 freelance-card" data-category="design">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h3>Mouhamed Fall</h3>
-                                <p class="text-primary">Graphiste</p>
-                                <p>Identité visuelle, logos, chartes graphiques.</p>
-                                <p class="fw-bold">Tarif : 25000f/h</p> <button class="btn btn-primary">Voir le
-                                    profil</button>
-                            </div>
-                        </div>
-                    </div> <!-- Carte 6 -->
-                    <div class="col-md-6 col-lg-4 freelance-card" data-category="marketing">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h3>Souleymane Fall</h3>
-                                <p class="text-primary">Community Manager</p>
-                                <p>Gestion de réseaux sociaux, création de contenu.</p>
-                                <p class="fw-bold">Tarif : 20000f/h</p> <button class="btn btn-primary">Voir le
-                                    profil</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main> <!-- Pied de page -->
-    <footer>
-        <div class="container py-4">
-            <p>&copy; 2025 AfriTalent. Tous droits reserves.</p>
+      </div>
+    </div>
+  </nav>
+
+  <main style="padding-top:70px;">
+
+    <!-- EN-TÊTE DE PAGE -->
+    <section class="page-hero" aria-labelledby="flPageTitle">
+      <div class="container text-center">
+        <span class="section-label">Nos talents</span>
+        <h1 class="page-hero-title" id="flPageTitle">Catalogue de Freelances</h1>
+        <p class="section-sub mb-4">
+          Découvrez les meilleurs talents tech africains disponibles pour vos projets.
+        </p>
+
+        <!-- Barre de filtres — JS fonctionnalité 6 -->
+        <div class="filter-bar" role="group" aria-label="Filtrer par catégorie">
+          <button class="filter-btn active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="dev">Développement Web</button>
+          <button class="filter-btn" data-filter="design">Design UI/UX</button>
+          <button class="filter-btn" data-filter="marketing">Marketing Digital</button>
+          <button class="filter-btn" data-filter="data">Data &amp; IA</button>
+          <button class="filter-btn" data-filter="redaction">Rédaction Tech</button>
+          <button class="filter-btn" data-filter="devops">DevOps &amp; Cloud</button>
         </div>
-    </footer><!-- Bootstrap 5 via CDN : script JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Votre script JavaScript -->
-    <script src="js/main.js"></script>
+      </div>
+    </section>
+
+    <!-- GRILLE DE PROFILS — 3 col desktop, 2 tablette, 1 mobile -->
+    <section class="section-py" aria-label="Liste des freelances">
+      <div class="container">
+        <div class="row g-4" id="flGrid">
+
+          <!-- Profil 1 -->
+          <div class="col-12 col-md-6 col-lg-4 fl-card-wrapper fade-in-section" data-cat="dev">
+            <div class="fl-card" data-bs-toggle="modal" data-bs-target="#profileModal"
+                 data-name="Lala Fall" data-role="Développeuse Full Stack"
+                 data-rate="125 000 FCFA / h" data-stars="★★★★★" data-bio="Expert React et Node.js avec 5 ans d'expérience. Spécialisée dans les applications SaaS pour startups africaines." data-color="#E85D2F">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="fl-avatar" style="background:#E85D2F" aria-hidden="true">LF</div>
+                <div>
+                  <div class="fl-name">Lala Fall</div>
+                  <div class="fl-role">Développeuse Full Stack</div>
+                </div>
+              </div>
+              <p class="fl-bio">Expert React et Node.js avec 5 ans d'expérience. Spécialisée dans les applications SaaS pour startups africaines.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fl-rate"><i class="bi bi-currency-dollar" aria-hidden="true"></i> 125 000 FCFA / h</span>
+                <span class="fl-stars" role="img" aria-label="Note 5 sur 5">★★★★★</span>
+              </div>
+              <button class="btn-profile btn-profile">Voir le profil</button>
+            </div>
+          </div>
+
+          <!-- Profil 2 -->
+          <div class="col-12 col-md-6 col-lg-4 fl-card-wrapper fade-in-section" data-cat="design" data-delay="80">
+            <div class="fl-card" data-bs-toggle="modal" data-bs-target="#profileModal"
+                 data-name="Moussa Fall" data-role="Designer UI/UX"
+                 data-rate="152 000 FCFA / h" data-stars="★★★★☆" data-bio="Créateur d'interfaces élégantes et accessibles. Portfolio comprenant plus de 40 projets mobiles et web." data-color="#1E2D5A">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="fl-avatar" style="background:#1E2D5A" aria-hidden="true">MF</div>
+                <div>
+                  <div class="fl-name">Moussa Fall</div>
+                  <div class="fl-role">Designer UI/UX</div>
+                </div>
+              </div>
+              <p class="fl-bio">Créateur d'interfaces élégantes et accessibles. Portfolio comprenant plus de 40 projets mobiles et web.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fl-rate"><i class="bi bi-currency-dollar" aria-hidden="true"></i> 152 000 FCFA / h</span>
+                <span class="fl-stars" role="img" aria-label="Note 4 sur 5">★★★★☆</span>
+              </div>
+              <button class="btn-profile">Voir le profil</button>
+            </div>
+          </div>
+
+          <!-- Profil 3 -->
+          <div class="col-12 col-md-6 col-lg-4 fl-card-wrapper fade-in-section" data-cat="data" data-delay="160">
+            <div class="fl-card" data-bs-toggle="modal" data-bs-target="#profileModal"
+                 data-name="Ahmed Fall" data-role="Data Scientist"
+                 data-rate="60 000 FCFA / h" data-stars="★★★★★" data-bio="Spécialiste Machine Learning et analyse de données. Diplômé de l'Université de Lagos, expérience internationale." data-color="#27AE60">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="fl-avatar" style="background:#27AE60" aria-hidden="true">AF</div>
+                <div>
+                  <div class="fl-name">Ahmed Fall</div>
+                  <div class="fl-role">Data Scientist</div>
+                </div>
+              </div>
+              <p class="fl-bio">Spécialiste Machine Learning et analyse de données. Diplômé de l'Université de Lagos, expérience internationale.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fl-rate"><i class="bi bi-currency-dollar" aria-hidden="true"></i> 60 000 FCFA / h</span>
+                <span class="fl-stars" role="img" aria-label="Note 4 sur 5">★★★★☆</span>
+              </div>
+              <button class="btn-profile">Voir le profil</button>
+            </div>
+          </div>
+
+          <!-- Profil 4 -->
+          <div class="col-12 col-md-6 col-lg-4 fl-card-wrapper fade-in-section" data-cat="dev">
+            <div class="fl-card" data-bs-toggle="modal" data-bs-target="#profileModal"
+                 data-name="Cheikh Fall" data-role="Développeur Mobile"
+                 data-rate="60 000 FCFA / h" data-stars="★★★★★" data-bio="Développeur Flutter et React Native. 20+ applications mobiles livrées pour des clients en Afrique de l'Ouest." data-color="#F4A261">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="fl-avatar" style="background:#F4A261" aria-hidden="true">CF</div>
+                <div>
+                  <div class="fl-name">Cheikh Fall</div>
+                  <div class="fl-role">Développeur Mobile</div>
+                </div>
+              </div>
+              <p class="fl-bio">Développeur Flutter et React Native. 20+ applications mobiles livrées pour des clients en Afrique de l'Ouest.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fl-rate"><i class="bi bi-currency-dollar" aria-hidden="true"></i> 60 000 FCFA / h</span>
+                <span class="fl-stars" role="img" aria-label="Note 4 sur 5">★★★★☆</span>
+              </div>
+              <button class="btn-profile">Voir le profil</button>
+            </div>
+          </div>
+
+          <!-- Profil 5 -->
+          <div class="col-12 col-md-6 col-lg-4 fl-card-wrapper fade-in-section" data-cat="devops" data-delay="80">
+            <div class="fl-card" data-bs-toggle="modal" data-bs-target="#profileModal"
+                 data-name="Saliou Fall" data-role="DevOps Engineer"
+                 data-rate="60 000 FCFA / h" data-stars="★★★★☆" data-bio="Expert AWS, Docker et Kubernetes. Mise en place de pipelines CI/CD pour entreprises africaines et européennes." data-color="#9B59B6">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="fl-avatar" style="background:#9B59B6" aria-hidden="true">SF</div>
+                <div>
+                  <div class="fl-name">Saliou Fall</div>
+                  <div class="fl-role">DevOps Engineer</div>
+                </div>
+              </div>
+              <p class="fl-bio">Expert AWS, Docker et Kubernetes. Mise en place de pipelines CI/CD pour entreprises africaines et européennes.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fl-rate"><i class="bi bi-currency-dollar" aria-hidden="true"></i> 60 000 FCFA / h</span>
+                <span class="fl-stars" role="img" aria-label="Note 4 sur 5">★★★★☆</span>
+              </div>
+              <button class="btn-profile">Voir le profil</button>
+            </div>
+          </div>
+
+          <!-- Profil 6 -->
+          <div class="col-12 col-md-6 col-lg-4 fl-card-wrapper fade-in-section" data-cat="marketing" data-delay="160">
+            <div class="fl-card" data-bs-toggle="modal" data-bs-target="#profileModal"
+                 data-name="Aïcha Fall" data-role="Marketing Digital"
+                 data-rate="25 000 FCFA / h" data-stars="★★★★★" data-bio="Stratège digitale experte en SEO, réseaux sociaux et publicité payante. Spécialisée sur le marché africain francophone." data-color="#E74C3C">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="fl-avatar" style="background:#E74C3C" aria-hidden="true">AF</div>
+                <div>
+                  <div class="fl-name">Aïcha Fall</div>
+                  <div class="fl-role">Marketing Digital</div>
+                </div>
+              </div>
+              <p class="fl-bio">Stratège digitale experte en SEO, réseaux sociaux et publicité payante. Spécialisée sur le marché africain francophone.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fl-rate"><i class="bi bi-currency-dollar" aria-hidden="true"></i> 25 000 FCFA / h</span>
+                <span class="fl-stars" role="img" aria-label="Note 4 sur 5">★★★★☆</span>
+              </div>
+              <button class="btn-profile">Voir le profil</button>
+            </div>
+          </div>
+
+          <!-- Profil 7 -->
+          <div class="col-12 col-md-6 col-lg-4 fl-card-wrapper fade-in-section" data-cat="redaction">
+            <div class="fl-card" data-bs-toggle="modal" data-bs-target="#profileModal"
+                 data-name="Fallou Fall" data-role="Rédacteur Tech"
+                 data-rate="100 000 FCFA / h" data-stars="★★★★☆" data-bio="Rédacteur spécialisé tech, blockchain et fintech. Articles publiés dans des médias internationaux anglophones et francophones." data-color="#16A085">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="fl-avatar" style="background:#16A085" aria-hidden="true">FF</div>
+                <div>
+                  <div class="fl-name">Fallou Fall</div>
+                  <div class="fl-role">Rédacteur Tech</div>
+                </div>
+              </div>
+              <p class="fl-bio">Rédacteur spécialisé tech, blockchain et fintech. Articles publiés dans des médias internationaux anglophones et francophones.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fl-rate"><i class="bi bi-currency-dollar" aria-hidden="true"></i> 100 000 FCFA / h</span>
+                <span class="fl-stars" role="img" aria-label="Note 4 sur 5">★★★★☆</span>
+              </div>
+              <button class="btn-profile">Voir le profil</button>
+            </div>
+          </div>
+
+          <!-- Profil 8 -->
+          <div class="col-12 col-md-6 col-lg-4 fl-card-wrapper fade-in-section" data-cat="design" data-delay="80">
+            <div class="fl-card" data-bs-toggle="modal" data-bs-target="#profileModal"
+                 data-name="Awa Fall" data-role="Designer Graphique"
+                 data-rate="50 000 FCFA / h" data-stars="★★★★★" data-bio="Designer graphique et illustratrice. Spécialisée dans l'identité visuelle avec une touche africaine contemporaine." data-color="#D35400">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="fl-avatar" style="background:#D35400" aria-hidden="true">AW</div>
+                <div>
+                  <div class="fl-name">Awa Fall</div>
+                  <div class="fl-role">Designer Graphique</div>
+                </div>
+              </div>
+              <p class="fl-bio">Designer graphique et illustratrice. Spécialisée dans l'identité visuelle avec une touche africaine contemporaine.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fl-rate"><i class="bi bi-currency-dollar" aria-hidden="true"></i> 50 000 FCFA / h</span>
+                <span class="fl-stars" role="img" aria-label="Note 4 sur 5">★★★★☆</span>
+              </div>
+              <button class="btn-profile">Voir le profil</button>
+            </div>
+          </div>
+
+          <!-- Profil 9 -->
+          <div class="col-12 col-md-6 col-lg-4 fl-card-wrapper fade-in-section" data-cat="data" data-delay="160">
+            <div class="fl-card" data-bs-toggle="modal" data-bs-target="#profileModal"
+                 data-name="Ibra Fall" data-role="Ingénieur IA"
+                 data-rate="70 000 FCFA / h" data-stars="★★★★★" data-bio="Ingénieur spécialisé en NLP et vision par ordinateur. Projets pour des ONG et entreprises technologiques du continent." data-color="#2980B9">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="fl-avatar" style="background:#2980B9" aria-hidden="true">IF
+                  -
+                </div>
+                <div>
+                  <div class="fl-name">Ibra Fall</div>
+                  <div class="fl-role">Ingénieur IA</div>
+                </div>
+              </div>
+              <p class="fl-bio">Ingénieur spécialisé en NLP et vision par ordinateur. Projets pour des ONG et entreprises technologiques du continent.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fl-rate"><i class="bi bi-currency-dollar" aria-hidden="true"></i> 70 000 FCFA / h</span>
+                <span class="fl-stars" role="img" aria-label="Note 4 sur 5">★★★★☆</span>
+              </div>
+              <button class="btn-profile">Voir le profil</button>
+            </div>
+          </div>
+
+        </div><!-- /row -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL Bootstrap — Profil freelance -->
+  <div class="modal fade" id="profileModal" tabindex="-1"
+       aria-labelledby="profileModalLabel" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background:var(--color-bg-card);color:var(--color-text);border:1px solid var(--color-border);">
+        <div class="modal-header border-0 pb-0">
+          <h2 class="modal-title" id="profileModalLabel" style="font-family:var(--font-display);font-weight:800;font-size:1.3rem;">
+            Profil Freelance
+          </h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div id="modalAvatar" class="fl-avatar" style="width:64px;height:64px;font-size:1.2rem;background:#E85D2F;"></div>
+            <div>
+              <div id="modalName" class="fl-name" style="font-size:1.15rem;"></div>
+              <div id="modalRole" class="fl-role"></div>
+            </div>
+          </div>
+          <p id="modalBio" style="color:var(--color-text-muted);font-size:0.92rem;line-height:1.7;"></p>
+          <div class="d-flex justify-content-between align-items-center mt-3 pt-3" style="border-top:1px solid var(--color-border);">
+            <span id="modalRate" class="fl-rate"></span>
+            <span id="modalStars" class="fl-stars"></span>
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" class="btn-profile" style="width:auto;padding:10px 28px;"
+                  data-bs-dismiss="modal">Contacter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="footer-brand-name"><i class="bi bi-globe-africa me-2"></i>AfriTalent</div>
+          <p class="footer-desc">La plateforme de référence pour connecter les freelances tech africains aux meilleures opportunités mondiales.</p>
+          <div>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h3 class="footer-col-title">Liens utiles</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="freelances.html">Freelances</a></li>
+            <li><a href="tarifs.html">Tarifs</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h3 class="footer-col-title">Ressources</h3>
+          <ul class="footer-links">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Guide du freelance</a></li>
+            <li><a href="#">Centre d'aide</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+            <li><a href="#">Conditions d'utilisation</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-4">
+          <h3 class="footer-col-title">Contact</h3>
+          <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>12 Avenue Cheikh Anta Diop, Dakar</span></div>
+          <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><a href="tel:+221710043840">+221 71 004 38 40</a></div>
+          <div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><a href="mailto:contact@afritalent.africa">contact@afritalent.africa</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>© <span class="current-year"></span> AfriTalent. Tous droits réservés.</p></div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" aria-label="Retour en haut"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    /* Modal : injection des données du freelance cliqué */
+    var profileModal = document.getElementById('profileModal');
+    profileModal.addEventListener('show.bs.modal', function (e) {
+      var card = e.relatedTarget.closest('.fl-card');
+      document.getElementById('modalName').textContent   = card.dataset.name  || '';
+      document.getElementById('modalRole').textContent   = card.dataset.role  || '';
+      document.getElementById('modalRate').textContent   = card.dataset.rate  || '';
+      document.getElementById('modalStars').textContent  = card.dataset.stars || '';
+      document.getElementById('modalBio').textContent    = card.dataset.bio   || '';
+      var av = document.getElementById('modalAvatar');
+      av.textContent = (card.dataset.name || 'FL').split(' ').map(function(n){return n[0];}).join('').substring(0,2).toUpperCase();
+      av.style.background = card.dataset.color || '#E85D2F';
+    });
+  </script>
 </body>
+</html>

@@ -1,81 +1,75 @@
 
-'use strict';
+/* ============================================================
+   1. DARK MODE / LIGHT MODE
+   Toggle + sauvegarde dans localStorage (persiste entre les pages)
+   ============================================================ */
+(function initTheme() {
+  // Récupère le thème sauvegardé ou utilise "light" par défaut
+  const saved = localStorage.getItem('afritalent-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+  updateThemeIcon(saved);
+})();
 
-// ============================================================
-// 1. DARK MODE avec localStorage
-// ============================================================
-function initDarkMode() {
-    const toggleBtn = document.getElementById('darkModeToggle');
-    if (!toggleBtn) return;
-    const html = document.documentElement;
-    const moonIcon = toggleBtn.querySelector('.fa-moon');
-    const sunIcon = toggleBtn.querySelector('.fa-sun');
-
-    // Restaurer le thème sauvegardé
-    const savedTheme = localStorage.getItem('afritalent-theme');
-    if (savedTheme === 'dark') {
-        html.setAttribute('data-bs-theme', 'dark');
-        moonIcon.classList.add('d-none');
-        sunIcon.classList.remove('d-none');
-    }
-
-    toggleBtn.addEventListener('click', function () {
-        const currentTheme = html.getAttribute('data-bs-theme');
-        if (currentTheme === 'dark') {
-            html.setAttribute('data-bs-theme', 'light');
-            localStorage.setItem('afritalent-theme', 'light');
-            moonIcon.classList.remove('d-none');
-            sunIcon.classList.add('d-none');
-        } else {
-            html.setAttribute('data-bs-theme', 'dark');
-            localStorage.setItem('afritalent-theme', 'dark');
-            moonIcon.classList.add('d-none');
-            sunIcon.classList.remove('d-none');
-        }
-    });
+function updateThemeIcon(theme) {
+  const btn = document.getElementById('themeBtn');
+  if (!btn) return;
+  // Icône soleil en dark, lune en light
+  btn.innerHTML = theme === 'dark'
+    ? '<i class="bi bi-sun-fill"></i>'
+    : '<i class="bi bi-moon-fill"></i>';
+  btn.setAttribute('aria-label', theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre');
 }
 
-// ============================================================
-// 2. NAVBAR DYNAMIQUE AU SCROLL
-// ============================================================
-function initNavbarScroll() {
-    const navbar = document.getElementById('mainNavbar');
-    if (!navbar) return;
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-            navbar.classList.add('navbar-scrolled');
-        } else {
-            navbar.classList.remove('navbar-scrolled');
-        }
-    });
+const themeBtn = document.getElementById('themeBtn');
+if (themeBtn) {
+  themeBtn.addEventListener('click', function () {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('afritalent-theme', next);
+    updateThemeIcon(next);
+  });
 }
 
-// ============================================================
-// 3. BOUTON RETOUR EN HAUT
-// ============================================================
-function initBackToTop() {
-    const backBtn = document.getElementById('backToTop');
-    if (!backBtn) return;
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 400) {
-            backBtn.classList.add('visible');
-        } else {
-            backBtn.classList.remove('visible');
-        }
-    });
-    backBtn.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+/* ============================================================
+   2. NAVBAR DYNAMIQUE AU SCROLL
+   Effet shrink + ombre au défilement
+   ============================================================ */
+const navbar = document.getElementById('mainNavbar');
+
+function handleNavbarScroll() {
+  if (!navbar) return;
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
 }
 
-// ============================================================
-// INITIALISATION
-// ============================================================
-document.addEventListener('DOMContentLoaded', function () {
-    initDarkMode();
-    initNavbarScroll();
-    initBackToTop();
-});
+window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+
+/* ============================================================
+   3. BOUTON "RETOUR EN HAUT"
+   Apparaît après 300px, smooth scroll vers le haut
+   ============================================================ */
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+function handleScrollTopBtn() {
+  if (!scrollTopBtn) return;
+  if (window.scrollY > 300) {
+    scrollTopBtn.classList.add('show');
+  } else {
+    scrollTopBtn.classList.remove('show');
+  }
+}
+
+window.addEventListener('scroll', handleScrollTopBtn, { passive: true });
+
+if (scrollTopBtn) {
+  scrollTopBtn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 /* ============================================================
    4. COMPTEURS ANIMÉS AU SCROLL
@@ -145,6 +139,7 @@ if (fadeEls.length > 0) {
     fadeObserver.observe(el);
   });
 }
+
 /* ============================================================
    6. FILTRAGE DYNAMIQUE DES FREELANCES
    Filtre les cartes par catégorie sans rechargement de page
@@ -305,3 +300,10 @@ profileBtns.forEach(function (btn) {
     if (modalRate) modalRate.textContent = rate;
   });
 });
+
+function initCopyrightYear() {
+    const yearElements = document.querySelectorAll('.copyrightYear, #copyrightYear');
+    if (!yearElements.length) return;
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach(function (el) { el.textContent = currentYear; });
+}
